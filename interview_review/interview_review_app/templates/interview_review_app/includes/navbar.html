@@ -1,30 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top">
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-pink sticky-top">
+
     <a href="#" class="navbar-brand">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="30" height="30" alt="logo">
+      <img src="{% static 'interview_review_app/img/logo.png' %}" width="30" height="30" alt="logo">
     </a>
-    <a href="#" class="navbar-brand">
-      <img src="https://nuxtjs.org/logos/nuxt-square-white.svg" width="30" height="30" alt="logo">
-    </a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a href="#" class="nav-link">Главная</a>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Компании</a>
         </li>
         <li class="nav-item ">
-          <a href="#" class="nav-link">Контакты</a>
+          <a href="#" class="nav-link">Вакансии</a>
         </li>
       </ul>
-      <form action="" class="form-inline my-2 my-lg-0">
-        <input type="text" class="form-control mr-sm-2" placeholder="Поиск" aria-label="Поиск">
-        <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">Поиск</button>
+
+      <form class="form-inline mx-auto">
+        <input class="form-control bg-darker-pink" type="search" placeholder="Поиск">
       </form>
-      <a href="#" class="btn btn-outline-light mr-2">Вход</a>
-      <a href="#" class="btn btn-outline-light mr-2">Регистрация</a>
-      <a href="#" class="btn btn-outline-light">Выход</a>
+
+      <a href="#" class="btn btn-light border-0 shadow-sm mr-2">Создать</a>
+      <a href="#" class="btn btn-light border-0 shadow-sm mr-2">Вход</a>
+      <a href="#" class="btn btn-light border-0 shadow-sm mr-2">Регистрация</a>
     </div>
   </nav>
