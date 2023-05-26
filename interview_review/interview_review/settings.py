@@ -13,15 +13,18 @@ DEBUG = env('DEBUG')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Take environment variables from .env file
+# # Take environment variables from .env file
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-# Raises Django's ImproperlyConfigured
+# # Raises Django's ImproperlyConfigured
 # exception if SECRET_KEY not in os.environ
+
 SECRET_KEY = env('SECRET_KEY')
 
-ALLOWED_HOSTS = ['*']
+AUTH_USER_MODEL = 'users.User'
 
+
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -32,7 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'interview_review_app.apps.InterviewReviewAppConfig'
+    'blog.apps.BlogConfig',
+    'users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [
@@ -50,7 +54,7 @@ ROOT_URLCONF = 'interview_review.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'interview_review_app' / 'templates' / 'interview_review_app'],
+        'DIRS': [BASE_DIR / 'templates' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -112,6 +116,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

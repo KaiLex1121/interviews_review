@@ -4,4 +4,4 @@ from django.urls import reverse, reverse_lazy
 
 
 class ShowMainPage(generic.TemplateView):
-    template_name = 'interview_review_app/home.html'
+    template_name = 'blog/home.html'

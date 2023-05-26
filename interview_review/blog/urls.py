@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.ShowMainPage.as_view(), name='show_main_page'),
+    path('', views.ShowMainPage.as_view(), name='home_page')
 ]
